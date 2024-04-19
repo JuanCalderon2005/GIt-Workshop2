@@ -32,15 +32,11 @@ else{
     alert("Tu presupuesto es inferior al umbral de EMERGENCIAS");
 }
 
-let minCostoArticulo = ArticulosExtras[0];
+let minCostoArticulo = ArticulosExtras.sort((a ,b) => a.Costo - b.Costo);
+let min = minCostoArticulo[0];
 
-for(let i = 0; i < ArticulosExtras.length; i++){
-    let articuloExtra = ArticulosExtras[i]
-    if (articuloExtra.Costo < minCostoArticulo.Costo) {
-        minCostoArticulo = articuloExtra
-    }
-}
 
-alert(`El artilo: ${minCostoArticulo.Nombre} es el articulo mas economico con un valor de ${minCostoArticulo.Costo}`)
+
+alert(`El artilo: ${min.Nombre} es el articulo mas economico con un valor de ${min.Costo}`)
 
 
